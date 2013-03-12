@@ -1,0 +1,47 @@
+<% include head %>
+
+<body xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+
+<div id="main">
+    <div data-role="page" id="profile">
+        <div data-theme="a" data-role="header">
+            <h3>SKPlanet 1</h3>
+        </div>
+        <div data-role="content">
+            <form>
+                <ul data-role="listview" data-inset="true" class="profile" style="display: none;">
+                    <li data-role="fieldcontain">
+                        <img src="" name="profile" class="profile">
+                        <h2 name="name" class="name"></h2>
+                        <p name="birthday" class="birthday"></p>
+                    </li>
+                    <li data-role="fieldcontain" class="telScript">
+                        <p>Tel.</p>
+                        <p><strong class="tel"></strong></p>
+                    </li>
+                    <li data-role="fieldcontain" class="emailScript">
+                        <p>Email</p>
+                        <p><strong class="email"></strong></p>
+                    </li>
+                    <li data-role="fieldcontain">
+                        <p>Team</p>
+                        <p><strong class="team"></strong></p>
+                    </li>
+                    <li data-role="fieldcontain">
+                        <p>Place</p>
+                        <p><strong class="place"></strong></p>
+                    </li>
+                </ul>
+            </form>
+        </div>
+        <input type="hidden" class="profileId" value="<%= id %>">
+    </div>
+
+    <% include pageloadScript %>
+    <script type="text/javascript">
+        profile();
+    </script>
+</div>
+</body>
+
+</html>

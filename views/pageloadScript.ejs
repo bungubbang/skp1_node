@@ -1,0 +1,22 @@
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("[data-role=page]").live("pageshow",function(event) {
+            if(this.id === "index") {
+                $('.flexslider').flexslider({
+                    animation: "slide"
+                });
+            } else if(this.id === "member") {
+                memberget();
+            } else if(this.id === "profile") {
+                profile();
+            } else if(this.id === "birthday") {
+                birthdayget();
+            } else if(this.id === "fee") {
+                feeget();
+            } else if(this.id === "comment") {
+                comment();
+            }
+
+        });
+    });
+</script>

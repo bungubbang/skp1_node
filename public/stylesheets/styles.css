@@ -1,0 +1,231 @@
+body {
+    background: #eee;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    text-align: center;
+    color: #777777;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* bootstrap */
+.navbar .brand {
+    float: none;
+}
+
+.navbar .btn-navbar {
+    display: initial;
+    float: left;
+}
+
+.popover {
+
+}
+
+.popover.right .arrow {
+    top: 18px;
+}
+
+.popover-content > hr {
+    margin: 10px 0px;
+}
+
+.loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background-color: #111;
+    padding: 20px 30px;
+    margin-left: -62px;
+    margin-top: -30px;
+    z-index: 10000;
+    opacity: 0.8;
+    color: #CCC;
+    border: 1px solid #CCC;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: #CCC 0px 1px 6px 0px;
+    -moz-box-shadow: #CCC 0px 1px 6px 0px;
+    box-shadow: #CCC 0px 1px 6px 0px;
+}
+
+/* index */
+.main_menu {
+    width: 100px;
+    display: inline-block;
+    padding: 20px 10px 10px;
+    background: white;
+    border: 1px solid #CCC;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+    margin: 0px 20px 10px;
+    -webkit-box-shadow: #CCC 0px 1px 6px 0px;
+    -moz-box-shadow: #CCC 0px 1px 6px 0px;
+    box-shadow: #CCC 0px 1px 6px 0px;
+}
+
+.main_menu > hr {
+    margin: 5px 0;
+}
+
+.main_menu > i {
+    color: #333;
+}
+
+/* member */
+.member_list, .birthday_list {
+    padding: 5px;
+    background: white;
+    border: 1px solid #CCC;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+    margin: 10px 20px;
+    -webkit-box-shadow: #CCC 0px 1px 6px 0px;
+    -moz-box-shadow: #CCC 0px 1px 6px 0px;
+    box-shadow: #CCC 0px 1px 6px 0px;
+}
+
+.member_line {
+    position: fixed;
+    top: 0px;
+    left: 80px;
+    width: 5px;
+    height: 100%;
+    background: #CFDCE3;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.member {
+    margin: 20px 0px;
+    text-align: left;
+}
+
+.member_img {
+    width: 100px;
+    display: inline-block;
+}
+
+.member_img > img {
+    width: 50px;
+    height: 50px;
+    margin-left: 55px;
+    border: 1px solid #CCC;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+    border-radius: 30px;
+    -webkit-box-shadow: #CCC 0px 1px 6px 0px;
+    -moz-box-shadow: #CCC 0px 1px 6px 0px;
+    box-shadow: #CCC 0px 1px 6px 0px;
+}
+
+.member_profile {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.member_profile > div {
+    top: 7px;
+    left: 20px;
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+}
+
+@media (max-width: 350px) {
+    .popover-content { font-size: 12px; }
+
+    .main_menu { margin: 0px 10px 10px; }
+
+    .member_img > img { margin-left: 10px; }
+    .member_img { width: 50px; }
+    .member_profile { left: 0px; }
+    .member_line { left: 35px; }
+    .member_list { margin: 10px; }
+}
+
+/* birthday */
+.birthdays {
+    text-align: left;
+}
+
+.birthday_list {
+    text-align: center;
+}
+
+.birthday {
+    width: 70px;
+    border: 1px solid #CCC;
+    margin: 10px 10px 10px 20px;
+    display: inline-block;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: #CCC 0px 1px 6px 0px;
+    -moz-box-shadow: #CCC 0px 1px 6px 0px;
+    box-shadow: #CCC 0px 1px 6px 0px;
+}
+
+.birthday_name {
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    background-color: #842A0C;
+    -webkit-border-top-left-radius: 10px;
+    -moz-border-top-left-radius: 10px;
+    -ms-border-top-left-radius: 10px;
+    -o-border-top-left-radius: 10px;
+    border-top-left-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
+    -moz-border-top-right-radius: 10px;
+    -ms-border-top-right-radius: 10px;
+    -o-border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    padding: 2px 3px;
+}
+
+.birthday_day {
+    padding: 5px;
+    font-size: 30px;
+    text-align: center;
+    color: #111;
+    background-color: #fff;
+    -webkit-border-bottom-left-radius: 10px;
+    -moz-border-bottom-left-radius: 10px;
+    -ms-border-bottom-left-radius: 10px;
+    -o-border-bottom-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    -webkit-border-bottom-right-radius: 10px;
+    -moz-border-bottom-right-radius: 10px;
+    -ms-border-bottom-right-radius: 10px;
+    -o-border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.about {
+    margin: 0px 20px 20px;
+    padding: 20px;
+    background-color: #fff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: #CCC 0px 1px 6px 0px;
+    -moz-box-shadow: #CCC 0px 1px 6px 0px;
+    box-shadow: #CCC 0px 1px 6px 0px;
+    text-align: left;
+}
