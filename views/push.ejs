@@ -9,27 +9,28 @@
 
 <script type="text/javascript">
     $('.sendPush').click(function() {
-        // $('.pushContents').val()
-        Parse.Push.send({
-            channels: ["skp"],
-            data: {
-                alert: $('.pushContents').val(),
-                title: "SK Planet 1기"
-            }
-        }, {
-            success: function() {
-                alert('push to message!');
-            },
-            error: function(error) {
-                // iOS 예외인 경우 그냥 성공으로 처리
-                // iOS 예외처리가 제대로 안되서 그냥 모두에게 보내고 115 에러 메세지는 그냥 성공으로 간주
-                if(error.code == 115) {
-                    alert('push to message!');
-                } else {
-                    alert(error.message);
-                }
-            }
-        });
+        sendPush();
+//        // $('.pushContents').val()
+//        Parse.Push.send({
+//            channels: ["skp"],
+//            data: {
+//                alert: $('.pushContents').val(),
+//                title: "SK Planet 1기"
+//            }
+//        }, {
+//            success: function() {
+//                alert('push to message!');
+//            },
+//            error: function(error) {
+//                // iOS 예외인 경우 그냥 성공으로 처리
+//                // iOS 예외처리가 제대로 안되서 그냥 모두에게 보내고 115 에러 메세지는 그냥 성공으로 간주
+//                if(error.code == 115) {
+//                    alert('push to message!');
+//                } else {
+//                    alert(error.message);
+//                }
+//            }
+//        });
     });
 </script>
 

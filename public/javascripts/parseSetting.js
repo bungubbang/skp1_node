@@ -3,9 +3,11 @@ Parse.initialize("jTBHKQYyGhv0EEGGfGyg1WAwKBbAq3sY55ieHUPR", "200KJnz22JtjplI1CF
 var parseId = "jTBHKQYyGhv0EEGGfGyg1WAwKBbAq3sY55ieHUPR";
 var parseApiKey = "ZZxsit0HLMToTo4E7mkAuDREHWBiytnPIwwHa2U2";
 var parseUserUrl = "https://api.parse.com/1/users";
+var parsePushUrl = "https://api.parse.com/1/push";
 var parseHeaders = {
     "X-Parse-Application-Id": "jTBHKQYyGhv0EEGGfGyg1WAwKBbAq3sY55ieHUPR",
-    "X-Parse-REST-API-Key": "ZZxsit0HLMToTo4E7mkAuDREHWBiytnPIwwHa2U2"
+    "X-Parse-REST-API-Key": "ZZxsit0HLMToTo4E7mkAuDREHWBiytnPIwwHa2U2",
+    "Content-Type": "application/json"
 }
 
 var renderMember = function() {
@@ -104,6 +106,32 @@ var renderFee = function() {
         }).fail(function(e) {
             alert(e);
         });
+}
+
+var sendPush = function() {
+    $.ajax({
+        type: "POST",
+        url: parsePushUrl,
+        headers: parseHeaders,
+        data: JSON.stringify({
+            "channels": [
+                "skp"
+            ],
+            "data": {
+                "title": "SKPlanet 1 Notice",
+                "alert": $('.pushContents').val()
+            }
+        })
+    }).done(function(data) {
+        alert('push to message!');
+    }).fail(function(error) {
+        if(error.responseText.indexOf(115) != -1) {
+            alert('push to message!');
+        } else {
+            console.log(error);
+            alert(error);
+        }
+    });
 }
 
 var comment = function () {
