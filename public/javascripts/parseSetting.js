@@ -152,10 +152,5 @@ var tel = function(number) {
 }
 
 var profileToggle = function(id) {
-    var display = $('.member_' + id).attr('style');
-    if(display.indexOf('none') != -1) {
-        $('.member_' + id).show('fast');
-    } else {
-        $('.member_' + id).hide('fast');
-    }
+    $('.member_' + id).slideToggle("slow");
 }
