@@ -24,14 +24,11 @@
         </div>
     </div>
     <div class="member_line"></div>
-    <div class="loading">
-        <i class="icon-spinner icon-spin icon-2x"></i><br>
-        <p>Loading</p>
-    </div>
+    <% include loading %>
 
     <script type="text/javascript">
         $(document).ready(function(){
-           memberget();
+            renderMember();
         });
     </script>
 </div>
