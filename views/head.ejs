@@ -20,14 +20,31 @@
 </head>
 
 <body>
-    <% include parseinit %>
+    <div class="menu_slide" style="display: none">
+        <img src="/images/skplanet.png" class="menu_title" />
+        <hr>
+        <p class="menu_text" onclick="movePage('member')"><i class="icon-group"></i>&nbsp;&nbsp; Member</p>
+        <hr>
+        <p class="menu_text" onclick="movePage('birthday')"><i class="icon-calendar"></i>&nbsp;&nbsp; Birthday</p>
+        <hr>
+        <p class="menu_text" onclick="movePage('comments')"><i class="icon-comments"></i>&nbsp;&nbsp; Comments</p>
+        <hr>
+        <p class="menu_text" onclick="movePage('fee')"><i class="icon-credit-card"></i>&nbsp;&nbsp; Fee</p>
+        <hr>
+        <p class="menu_text" onclick="movePage('push')"><i class="icon-bullhorn"></i>&nbsp;&nbsp; Push</p>
+        <hr>
+        <p class="menu_text" onclick="movePage('about')"><i class="icon-quote-left"></i>&nbsp;&nbsp; About</p>
+        <hr>
+    </div>
+    <div class="menu_background" style="display: none" onclick="hideMenu()"></div>
     <div class="navbar">
         <div class="navbar-inner">
-            <button type="button" class="btn btn-navbar">
+            <button type="button" class="btn btn-navbar" onclick="showMenu()">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="brand" href="#">SKPlanet 1</a>
+            <a class="brand" href="#"><img src="/images/skplanet.png" class="nav_title" onclick="movePage('home')"/></a>
+            <!--<a class="brand" href="#">SK Planet 1</a>-->
         </div>
     </div>

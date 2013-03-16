@@ -154,3 +154,26 @@ var tel = function(number) {
 var profileToggle = function(id) {
     $('.member_' + id).slideToggle("slow");
 }
+
+var showMenu = function() {
+    $('.menu_background').show();
+    $('.menu_slide').show('slow');
+}
+
+var hideMenu = function() {
+    $('.menu_background').hide();
+    $('.menu_slide').hide('slow');
+}
+
+var movePage = function(menu) {
+    switch (menu) {
+        case 'member' : location.href='/member'; break;
+        case 'birthday' : location.href='/birthday'; break;
+        case 'comments' : location.href='/comment'; break;
+        case 'fee' : location.href='/fee'; break;
+        case 'push' : location.href='/push'; break;
+        case 'about' : location.href='/about'; break;
+        case 'home' : location.href='/'; break;
+    }
+
+}
