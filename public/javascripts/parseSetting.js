@@ -1,5 +1,4 @@
 // Paser setting
-Parse.initialize("jTBHKQYyGhv0EEGGfGyg1WAwKBbAq3sY55ieHUPR", "200KJnz22JtjplI1CFOYNPt1QDN2Pir5cgDj4R6X");
 var parseId = "jTBHKQYyGhv0EEGGfGyg1WAwKBbAq3sY55ieHUPR";
 var parseApiKey = "ZZxsit0HLMToTo4E7mkAuDREHWBiytnPIwwHa2U2";
 var parseUserUrl = "https://api.parse.com/1/users";
@@ -126,6 +125,7 @@ var sendPush = function() {
         alert('push to message!');
     }).fail(function(error) {
         if(error.responseText.indexOf(115) != -1) {
+            console.log(error.responseText);
             alert('push to message!');
         } else {
             console.log(error);
@@ -176,4 +176,47 @@ var movePage = function(menu) {
         case 'home' : location.href='/'; break;
     }
 
+}
+
+var login = function() {
+    $.ajax({
+        type: "GET",
+        url: "https://api.parse.com/1/login",
+        headers: parseHeaders,
+        data: {
+            "username": $('.login_name').val(),
+            "password": $('.login_password').val()
+        }
+    }).done(function(data) {
+            $.get('/login_check', function(data){
+                if(data === 'ok') {
+                    installation();
+                }
+            });
+    }).fail(function(error) {
+        alert('로그인에 실패하였습니다.');
+    });
+}
+
+var installation = function() {
+    if(typeof androidParseData === 'undefined') {
+        alert('잘못된 접근방식으로 로그인 할 수 없습니다.');
+    } else {
+        $.ajax({
+            type: "POST",
+            url: "https://api.parse.com/1/installations",
+            headers: parseHeaders,
+            data: JSON.stringify({
+                "deviceType": "android",
+                "installationId": androidParseData.installationId(),
+//                "installationId": "7fe91089-c319-49ef-8348-5f879f7a5529",
+                "channels": ["skp"],
+                "owner": $('.login_name').val()
+            })
+        }).done(function(data) {
+            location.href = "/";
+        }).fail(function(error) {
+            console.log(error);
+        });
+    }
 }

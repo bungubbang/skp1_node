@@ -4,7 +4,10 @@
  */
 
 exports.index = function(req, res){
-  res.render('index');
+    if(req.cookies.skplogin !== 1){
+        res.render('login');
+    }
+    res.render('index');
 };
 
 exports.member = function(req, res){
@@ -29,4 +32,13 @@ exports.push = function(req, res){
 
 exports.about = function(req, res) {
     res.render('about');
+}
+
+exports.login = function(req, res) {
+    res.render('login');
+}
+
+exports.loginCheck = function(req, res) {
+    res.cookie('skplogin', '1', { maxAge: new Date(Date.now() + 900000), path: '/'});
+    res.send('ok');
 }

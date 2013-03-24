@@ -286,3 +286,23 @@ body {
     box-shadow: #CCC 0px 1px 6px 0px;
     text-align: left;
 }
+
+
+/* login */
+.login_background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+.login_form {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    margin-left: -169px;
+}
