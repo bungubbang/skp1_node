@@ -200,7 +200,8 @@ var login = function() {
 
 var installation = function() {
     if(typeof androidParseData === 'undefined') {
-        alert('잘못된 접근방식으로 로그인 할 수 없습니다.');
+        // PC 버젼
+        location.href = "/";
     } else {
         $.ajax({
             type: "POST",
@@ -209,7 +210,6 @@ var installation = function() {
             data: JSON.stringify({
                 "deviceType": "android",
                 "installationId": androidParseData.installationId(),
-//                "installationId": "7fe91089-c319-49ef-8348-5f879f7a5529",
                 "channels": ["skp"],
                 "owner": $('.login_name').val()
             })
