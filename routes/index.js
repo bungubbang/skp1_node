@@ -39,6 +39,7 @@ exports.login = function(req, res) {
 }
 
 exports.loginCheck = function(req, res) {
+    res.cookie('skpname', req.query.username , { maxAge: new Date(Date.now() + 900000), path: '/'});
     res.cookie('skplogin', '1', { maxAge: new Date(Date.now() + 900000), path: '/'});
     res.send('ok');
 }
