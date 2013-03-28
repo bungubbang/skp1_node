@@ -4,8 +4,8 @@
  */
 
 exports.index = function(req, res){
-    if(req.cookies.skplogin !== 1){
-        res.render('login');
+    if(req.cookies.skplogin !== '1'){
+        res.redirect('/login');
     }
     res.render('index');
 };
@@ -39,6 +39,7 @@ exports.login = function(req, res) {
 }
 
 exports.loginCheck = function(req, res) {
+    res.cookie('skpname', req.query.username , { maxAge: new Date(Date.now() + 900000), path: '/'});
     res.cookie('skplogin', '1', { maxAge: new Date(Date.now() + 900000), path: '/'});
     res.send('ok');
 }

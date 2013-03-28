@@ -188,7 +188,7 @@ var login = function() {
             "password": $('.login_password').val()
         }
     }).done(function(data) {
-            $.get('/login_check', function(data){
+            $.get('/login_check',{ username: $('.login_name').val() } , function(data){
                 if(data === 'ok') {
                     installation();
                 }
