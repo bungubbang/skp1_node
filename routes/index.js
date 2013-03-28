@@ -4,8 +4,8 @@
  */
 
 exports.index = function(req, res){
-    if(req.cookies.skplogin !== 1){
-        res.render('login');
+    if(req.cookies.skplogin !== '1'){
+        res.redirect('/login');
     }
     res.render('index');
 };
