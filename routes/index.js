@@ -27,7 +27,11 @@ exports.fee = function(req, res){
 };
 
 exports.push = function(req, res){
-    res.render('push');
+    if(req.cookies.skpname !== null){
+        res.render('push', {username: req.cookies.skpname});
+    } else {
+        res.render('push');
+    }
 };
 
 exports.about = function(req, res) {

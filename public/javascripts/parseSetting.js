@@ -107,7 +107,7 @@ var renderFee = function() {
         });
 }
 
-var sendPush = function() {
+var sendPush = function(name) {
     $.ajax({
         type: "POST",
         url: parsePushUrl,
@@ -118,7 +118,7 @@ var sendPush = function() {
             ],
             "data": {
                 "title": "SKPlanet 1 Notice",
-                "alert": $('.pushContents').val()
+                "alert": $('.pushContents').val() + " -" + name
             }
         })
     }).done(function(data) {
