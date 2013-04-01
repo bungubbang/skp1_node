@@ -220,3 +220,13 @@ var installation = function() {
         });
     }
 }
+
+var logout = function() {
+    $.get('/logout', function(data) {
+        if(data === 'logout') {
+            location.href = "/login";
+        } else {
+            alert('fail logout');
+        }
+    });
+}
