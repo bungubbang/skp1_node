@@ -7,7 +7,7 @@ exports.index = function(req, res){
     if(req.cookies.skplogin !== '1'){
         res.redirect('/login');
     }
-    res.render('index');
+    res.render('index', {username: req.cookies.skpname});
 };
 
 exports.member = function(req, res){

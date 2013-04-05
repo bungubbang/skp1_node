@@ -230,3 +230,18 @@ var logout = function() {
         }
     });
 }
+
+var logs= function(name) {
+    $.ajax({
+        type: "POST",
+        url: "https://api.parse.com/1/classes/logs",
+        headers: parseHeaders,
+        data: JSON.stringify({
+            "name": name
+        })
+    }).done(function(data) {
+        console.log(data);
+        }).fail(function(error) {
+            console.log(error);
+        });
+}
