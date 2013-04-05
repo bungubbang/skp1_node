@@ -237,7 +237,8 @@ var logs= function(name) {
         url: "https://api.parse.com/1/classes/logs",
         headers: parseHeaders,
         data: JSON.stringify({
-            "name": name
+            "name": name,
+            "date": new Date()
         })
     }).done(function(data) {
         console.log(data);
